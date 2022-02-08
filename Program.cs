@@ -18,20 +18,20 @@ namespace EmployeeWage
 
             Random random = new Random();
             int employeeCheck = random.Next(0, 3);
-            if (employeeCheck == ISPRESENT)
+            switch (employeeCheck)
             {
-                Console.WriteLine("Employee is Present");
-                workingHours = 8;
-            }
-            else if (employeeCheck == ISPARTTIME)
-            {
-                Console.WriteLine("Employee is working part time");
-                workingHours = 8;
-            }
-            else
-            {
-                Console.WriteLine("Employee is absent");
-                workingHours = 0;
+                case ISPRESENT:
+                    //Console.WriteLine("Employee is present");
+                    workingHours = 8;
+                    break;
+                case ISPARTTIME:
+                    //Console.WriteLine("Employee is part-time working");
+                    workingHours = 8;
+                    break;
+                default:
+                    //Console.WriteLine("Employee is absent");
+                    workingHours = 0;
+                    break;
             }
             int employeeWage = workingHours * WAGEPERHOUR;
             Console.WriteLine($"Employee earns {employeeWage}");
