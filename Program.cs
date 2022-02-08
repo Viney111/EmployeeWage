@@ -10,7 +10,18 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Employee Wage computation Program");
+            const int ISPRESENT = 1;
+            const int ISABSENT = 0;
+            Random random = new Random();
+            int employeeCheck = random.Next(0, 2);
+            if (employeeCheck == ISPRESENT)
+            {
+                Console.WriteLine("Employee is Present");
+            }
+            else
+            {
+                Console.WriteLine("Employee is absent");
+            }
             Console.ReadLine();
 
         }
