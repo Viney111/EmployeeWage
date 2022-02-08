@@ -14,26 +14,33 @@ namespace EmployeeWage
             const int ISPARTTIME = 2;
             const int ISABSENT = 0;
             const int WAGEPERHOUR = 20;
-            int workingHours = 8;
+            const int TOTALWORKINGDAYS = 20;
 
-            Random random = new Random();
-            int employeeCheck = random.Next(0, 3);
-            switch (employeeCheck)
+            int workingHours = 8;
+            int totalWorkingHrs = 0;
+
+            for (int i = 0; i < TOTALWORKINGDAYS; i++)
             {
-                case ISPRESENT:
-                    //Console.WriteLine("Employee is present");
-                    workingHours = 8;
-                    break;
-                case ISPARTTIME:
-                    //Console.WriteLine("Employee is part-time working");
-                    workingHours = 8;
-                    break;
-                default:
-                    //Console.WriteLine("Employee is absent");
-                    workingHours = 0;
-                    break;
+                Random random = new Random();
+                int employeeCheck = random.Next(0, 3);
+                switch (employeeCheck)
+                {
+                    case ISPRESENT:
+                        //Console.WriteLine("Employee is present");
+                        workingHours = 8;
+                        break;
+                    case ISPARTTIME:
+                        //Console.WriteLine("Employee is part-time working");
+                        workingHours = 8;
+                        break;
+                    default:
+                        //Console.WriteLine("Employee is absent");
+                        workingHours = 0;
+                        break;
+                }
+                totalWorkingHrs = totalWorkingHrs + workingHours;
             }
-            int employeeWage = workingHours * WAGEPERHOUR;
+            int employeeWage = totalWorkingHrs * WAGEPERHOUR;
             Console.WriteLine($"Employee earns {employeeWage}");
             Console.ReadLine();
 
