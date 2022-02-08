@@ -11,18 +11,22 @@ namespace EmployeeWage
         static void Main(string[] args)
         {
             const int ISPRESENT = 1;
+            const int ISPARTTIME = 2;
             const int ISABSENT = 0;
             const int WAGEPERHOUR = 20;
             int workingHours = 8;
-            
 
             Random random = new Random();
-            int employeeCheck = random.Next(0, 2);
+            int employeeCheck = random.Next(0, 3);
             if (employeeCheck == ISPRESENT)
             {
                 Console.WriteLine("Employee is Present");
                 workingHours = 8;
-
+            }
+            else if (employeeCheck == ISPARTTIME)
+            {
+                Console.WriteLine("Employee is working part time");
+                workingHours = 8;
             }
             else
             {
@@ -31,6 +35,7 @@ namespace EmployeeWage
             }
             int employeeWage = workingHours * WAGEPERHOUR;
             Console.WriteLine($"Employee earns {employeeWage}");
+            Console.ReadLine();
 
         }
     }
