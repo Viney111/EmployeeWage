@@ -15,11 +15,13 @@ namespace EmployeeWage
             const int ISABSENT = 0;
             const int WAGEPERHOUR = 20;
             const int TOTALWORKINGDAYS = 20;
+            const int MAXHRSWORKED = 100;
 
             int workingHours = 8;
             int totalWorkingHrs = 0;
+            int workingDays = 0;
 
-            for (int i = 0; i < TOTALWORKINGDAYS; i++)
+            while (workingDays < TOTALWORKINGDAYS && totalWorkingHrs < MAXHRSWORKED)
             {
                 Random random = new Random();
                 int employeeCheck = random.Next(0, 3);
@@ -39,6 +41,7 @@ namespace EmployeeWage
                         break;
                 }
                 totalWorkingHrs = totalWorkingHrs + workingHours;
+                workingDays++;
             }
             int employeeWage = totalWorkingHrs * WAGEPERHOUR;
             Console.WriteLine($"Employee earns {employeeWage}");
