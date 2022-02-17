@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-    public class Employee
+namespace EmployeeWage
+{
+    public class CompanyEmpWage
     {
         const int ISPRESENT = 1;
         const int ISPARTTIME = 2;
@@ -13,7 +15,7 @@ using System.Threading.Tasks;
         readonly int totalWorkingDays;
         readonly int maxHrsWorked;
 
-        public Employee(string companyName, int wagePerHour, int totalWorkingDays, int maxHrsWorked)
+        public CompanyEmpWage(string companyName, int wagePerHour, int totalWorkingDays, int maxHrsWorked)
         {
             this.companyName = companyName;
             this.wagePerHour = wagePerHour;
@@ -50,17 +52,16 @@ using System.Threading.Tasks;
             int workingDays = 1;
             int totalWage = 0;
             int workingHrs = 0;
-            IDictionary<int, int> dailyWage = new Dictionary<int, int>();
 
             while (workingDays <= totalWorkingDays && totalWorkingHrs < maxHrsWorked)
             {
                 workingHrs = getworkhrs();
-                dailyWage[workingDays] = workingHrs * wagePerHour;
                 totalWage += wagePerHour * workingHrs;
-                Console.WriteLine($"Employee dailyWage is {dailyWage[workingDays]} & Total wage till this day is {totalWage}");
+
                 totalWorkingHrs += workingHrs;
                 workingDays++;
             }
             Console.WriteLine($"Employee from {companyName} earns {totalWage} ");
         }
     }
+}

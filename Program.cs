@@ -11,10 +11,13 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            Employee e1 = new Employee("TATA",30, 21, 100);
-            e1.ComputingWage();
-            Employee e2 = new Employee("KORLOY",40, 25, 120);
-            e2.ComputingWage();
+            EmpWageBuilderArray empWageBuilderArray = new EmpWageBuilderArray(5);
+            empWageBuilderArray.addEmployeeWage("TATA", 20, 15, 100);
+            empWageBuilderArray.addEmployeeWage("MARUTI", 25, 20, 80);
+            empWageBuilderArray.addEmployeeWage("HYUNDAI", 20, 22, 90);
+            empWageBuilderArray.addEmployeeWage("TESLA", 35, 20, 110);
+            empWageBuilderArray.addEmployeeWage("KIA", 30, 18, 80);
+            empWageBuilderArray.getWage();
         }
     }
 }
