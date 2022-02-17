@@ -11,10 +11,11 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            Employee e1 = new Employee("TATA",30, 21, 100);
-            e1.ComputingWage();
-            Employee e2 = new Employee("KORLOY",40, 25, 120);
-            e2.ComputingWage();
+            EmpWage_Builder_Object dmart = new EmpWage_Builder_Object("DMart", 20, 20, 100);
+            EmpWage_Builder_Object reliance = new EmpWage_Builder_Object("Reliance", 25, 18, 120);
+            dmart.ComputingWage();
+            reliance.ComputingWage();
+            
         }
     }
 }
