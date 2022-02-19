@@ -11,14 +11,14 @@ namespace EmployeeWage
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderList empWageBuilderArray = new EmpWageBuilderList();
-            empWageBuilderArray.addEmployeeWage("TATA",20,20,100);
-            empWageBuilderArray.addEmployeeWage("HYUNDAI", 25, 18, 90);
-            empWageBuilderArray.addEmployeeWage("FORD", 30, 19, 80);
-            empWageBuilderArray.addEmployeeWage("TOYOTA", 30, 21, 110);
-            empWageBuilderArray.addEmployeeWage("MAHINDRA", 18, 25, 120);
+            IEmployee employee = new EmpWageBuilderList();
+            employee.addEmployeeWage("TATA",20,20,100);
+            employee.addEmployeeWage("HYUNDAI", 25, 18, 90);
+            employee.addEmployeeWage("FORD", 30, 19, 80);
+            employee.addEmployeeWage("TOYOTA", 30, 21, 110);
+            employee.addEmployeeWage("MAHINDRA", 18, 25, 120);
 
-            empWageBuilderArray.getWage();
+            employee.getWage();
         }
     }
 }

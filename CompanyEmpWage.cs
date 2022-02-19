@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage
 {
+    public interface IEmployee
+    {
+        public void getWage();
+        public void addEmployeeWage(string companyName, int wagePerHour, int totalWorkingDays, int maxHrsWorked);
+    }
     public class CompanyEmpWage
     {
         const int ISPRESENT = 1;

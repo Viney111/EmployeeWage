@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage
 {
-    internal class EmpWageBuilderList
+    internal class EmpWageBuilderList : IEmployee
     {
         private List<CompanyEmpWage> empWageList;
 
