@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace EmployeeWage
 {
-    internal class EmpWageBuilderArray
+    internal class EmpWageBuilderList
     {
-        private CompanyEmpWage[] empWageArray;
+        private List<CompanyEmpWage> empWageList;
 
-        public EmpWageBuilderArray(int size)
+        public EmpWageBuilderList()
         {
-            this.empWageArray = new CompanyEmpWage[size];
+            this.empWageList = new List<CompanyEmpWage>();
         }
-        int i = 0;
         public void addEmployeeWage(string companyName, int wagePerHour, int totalWorkingDays, int maxHrsWorked)
         {
-            empWageArray[i] = new CompanyEmpWage(companyName,wagePerHour,totalWorkingDays,maxHrsWorked);
-            i++;
+            empWageList.Add(new CompanyEmpWage(companyName,wagePerHour, totalWorkingDays, maxHrsWorked));
         }
         public void getWage()
         {
-            for(int j = 0; j < empWageArray.Length; j++)
+            foreach (var emp in empWageList)
             {
-                empWageArray[j].ComputingWage();
+                emp.ComputingWage();
             }
         }
         
